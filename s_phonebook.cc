@@ -18,7 +18,7 @@ void pbook::s_phonebook()
    // получаем диапазон итераторов для ключа
    auto range = _pbht->equal_range(s);
    // получаем длину диапазона итераторов
-   auto len = std::distance(range.first, range.second);
+   auto len = std::distance(range.begin(), range.end());
 
    if (len!=0) {
       pl::Color color;
