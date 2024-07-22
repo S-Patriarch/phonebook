@@ -3,6 +3,7 @@
 #include "pl/color.hh"
 #include <iostream>
 #include <string>
+#include <iterator>
 
 void pbook::s_phonebook()
    // функция осуществляет поиск контакта
