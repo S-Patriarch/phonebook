@@ -25,6 +25,7 @@ set(SOURCES
    d_phonebook.cc
    q_phonebook.cc
    s_phonebook.cc
+   p_phonebook.cc
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
