@@ -51,6 +51,9 @@ int main()
       if (strncmp("a",s.c_str(),1)==0 || strncmp("A",s.c_str(),1)==0) {
          pbd.a_phonebook();
       }
+      if (strncmp("p",s.c_str(),1)==0 || strncmp("P",s.c_str(),1)==0) {
+         pbd.p_phonebook();
+      }
 
       cout << pl::mr::clrscr;
       pbd.info();

@@ -19,13 +19,13 @@ void pbook::s_phonebook()
    // получаем диапазон итераторов для ключа
    auto range = _pbht->equal_range(s);
    // получаем длину диапазона итераторов
-   auto len = std::distance(range.begin(), range.end());
+   auto len = std::distance(range.first, range.second);
 
    if (len!=0) {
       pl::Color color;
       cout << endl;
       // выводим все совпадения
-      for (auto it=range.begin(); it!=range.end(); ++it) {
+      for (auto it=range.first; it!=range.second; ++it) {
          cout << color.esc_tb(pl::Color::color::BLUE)
               << it->first << '\n'
               << color.esc_c()

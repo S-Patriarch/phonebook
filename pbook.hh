@@ -36,6 +36,7 @@ public:
    void d_phonebook();
    void s_phonebook();
    void a_phonebook();
+   void p_phonebook();
 };
 
 #endif // PBOOK_HH

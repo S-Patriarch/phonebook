@@ -5,8 +5,9 @@ void pbook::info_help()
    // выводит информационную подсказку
 {
    std::cout << "Commands:\n"
-             << "  a - display all contacts\n"
-             << "  s - search for contact\n"
+             << "  a - display all contacts : " << _pbht->size() << '\n'
+             << "  s - search contact\n"
+             << "  p - search contact by substring\n"
              << "  c - create a new contact\n"
              << "  d - delete contact\n"
              << "  q - exit\n"
