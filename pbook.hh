@@ -16,7 +16,8 @@ class pbook {
    std::string _fpb;       // файл телефонной книжки
    std::string _fpb_path;  // путь к файлу телефонной книжки
 public:
-   pbook(): _fpb{"/pbook"}
+   pbook()
+      : _fpb{"/pbook"}
    {
       const char* sh = "HOME";
       char* dir_home = std::getenv(sh);
