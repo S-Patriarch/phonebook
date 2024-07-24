@@ -14,7 +14,7 @@ class pbook {
 
    std::unordered_multimap<std::string,std::string>* _pbht;
 public:
-   pbook() : _fpb{"/pbook"}
+   pbook(): _fpb{"/pbook"}
    {
       const char* sh = "HOME";
       char* dir_home = std::getenv(sh);
