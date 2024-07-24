@@ -9,12 +9,12 @@
 #include <unordered_map>
 
 class pbook {
-   std::string _fpb {"/pbook"}; // файл телефонной книжки
-   std::string _fpb_path;       // путь к файлу телефонной книжки
+   std::string _fpb;       // файл телефонной книжки
+   std::string _fpb_path;  // путь к файлу телефонной книжки
 
    std::unordered_multimap<std::string,std::string>* _pbht;
 public:
-   pbook()
+   pbook() : _fpb{"/pbook"}
    {
       const char* sh = "HOME";
       char* dir_home = std::getenv(sh);
@@ -23,8 +23,7 @@ public:
 
       _pbht = new std::unordered_multimap<std::string,std::string>;
    }
-   ~pbook() noexcept
-   {delete _pbht;}
+   ~pbook() noexcept {delete _pbht;}
 
    void info_logo();
    void info_help();
@@ -39,4 +38,4 @@ public:
    void p_phonebook();
 };
 
-#endif // PBOOK_HH
+#endif  // PBOOK_HH
