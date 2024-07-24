@@ -7,6 +7,7 @@
 
 void pbook::s_phonebook()
    // функция осуществляет поиск контакта
+   // алгоритмическая сложность O(1)
 {
    using std::string;
    using std::cout;
