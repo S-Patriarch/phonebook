@@ -25,7 +25,11 @@ public:
 
       _pbht = new Tm;
    }
-   ~pbook() noexcept {delete _pbht;}
+   ~pbook() noexcept 
+   {
+      delete _pbht;
+      _pbht = nullptr;
+   }
 
    void info_logo();
    void info_help();
