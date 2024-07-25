@@ -10,35 +10,36 @@ void pbook::p_phonebook()
    // функция осуществляет поиск контакта по подстроке
    // алгоритмическая сложность O(n)
 {
+   using Tm = std::unordered_multimap<std::string,std::string>;
+
    using std::string;
    using std::cout;
    using std::endl;
 
    // создаем временную хэш-таблицу в куче
-   std::unordered_multimap<string,string>* mm;
-   mm = new std::unordered_multimap<string,string>;
+   Tm* mm = new Tm;
 
    string s {};
-   cout << "\ncontact > ";
+   cout << "\nsubstring > ";
    std::getline(std::cin,s);
 
    // формируем временную хэш-таблицу по запросу
-   for (const auto& [key,value] : (*_pbht)) {
-      string stmp = key;
+   for (const auto& [k,v] : (*_pbht)) {
+      string stmp = k;
       std::size_t pos = stmp.find(s);
       if (pos!=string::npos) {
-         mm->emplace(std::make_pair(key,value));
+         mm->emplace(std::make_pair(k,v));
       }
    }
    // выводим результат поиска по запросу
    if (!mm->empty()) {
       pl::Color color;
       cout << endl;
-      for (const auto& [key,value] : (*mm)) {
+      for (const auto& [k,v] : (*mm)) {
          cout << color.esc_tb(pl::Color::color::BLUE)
-              << key << '\n'
+              << "  " << k << '\n'
               << color.esc_c()
-              << value
+              << "  " << v
               << endl;
       }
       cout << endl;
@@ -46,6 +47,7 @@ void pbook::p_phonebook()
    else {cout << "\nW: contact not found" << endl;}
 
    delete mm;
+   mm = nullptr;
 
    pl::Conio conio;
    cout << pl::mr::crsh;

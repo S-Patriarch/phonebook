@@ -12,11 +12,11 @@ void pbook::a_phonebook()
    pl::Color color;
 
    cout << endl;
-   for (const auto& [key,value] : (*_pbht)) {
+   for (const auto& [k,v] : (*_pbht)) {
       cout << color.esc_tb(pl::Color::color::BLUE)
-           << key << '\n'
+           << "  " << k << '\n'
            << color.esc_c()
-           << value << '\n';
+           << "  " << v << '\n';
    }
 
    pl::Conio conio;

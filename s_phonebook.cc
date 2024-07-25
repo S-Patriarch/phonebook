@@ -28,9 +28,9 @@ void pbook::s_phonebook()
       // выводим все совпадения
       for (auto it=range.first; it!=range.second; ++it) {
          cout << color.esc_tb(pl::Color::color::BLUE)
-              << it->first << '\n'
+              << "  " << it->first << '\n'
               << color.esc_c()
-              << it->second
+              << "  " << it->second
               << endl;
       }
       cout << endl;
