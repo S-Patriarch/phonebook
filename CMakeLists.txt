@@ -7,8 +7,8 @@ cmake_minimum_required(VERSION 3.25)
 project(pb)
 
 set(ts_VERSION_MAJOR 1)
-set(ts_VERSION_MINOR 0)
-set(ts_VERSION_PATCH 0)
+set(ts_VERSION_MINOR 1)
+set(ts_VERSION_PATCH 2)
 set(ts_VERSION "${ts_VERSION_MAJOR}.${ts_VERSION_MINOR}.${ts_VERSION_PATCH}")
 
 set(CMAKE_BUILD_TYPE Release)
