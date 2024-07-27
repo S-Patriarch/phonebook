@@ -12,7 +12,7 @@ void pbook::a_phonebook()
    pl::Color color;
 
    cout << endl;
-   for (const auto& [k,v] : (*_pbht)) {
+   for (const auto& [k,v] : (*m_pbht)) {
       cout << color.esc_tb(pl::Color::color::BLUE)
            << "  " << k << '\n'
            << color.esc_c()

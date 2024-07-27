@@ -11,25 +11,25 @@
 class pbook {
    using mm_t = std::unordered_multimap<std::string,std::string>;
 
-   mm_t* _pbht;
+   mm_t* m_pbht;
 
-   std::string _fpb;       // файл телефонной книжки
-   std::string _fpb_path;  // путь к файлу телефонной книжки
+   std::string m_fpb;       // файл телефонной книжки
+   std::string m_fpb_path;  // путь к файлу телефонной книжки
 public:
    pbook()
-      : _fpb{"/pbook"}
+      : m_fpb{"/pbook"}
    {
       const char* sh = "HOME";
       char* dir_home = std::getenv(sh);
-      if (dir_home==nullptr) {_fpb_path = "";}
-      else {_fpb_path = static_cast<std::string>(dir_home)+"/.pbook";}
+      if (dir_home==nullptr) {m_fpb_path = "";}
+      else {m_fpb_path = static_cast<std::string>(dir_home)+"/.pbook";}
 
-      _pbht = new mm_t;
+      m_pbht = new mm_t;
    }
    ~pbook() noexcept 
    {
-      delete _pbht;
-      _pbht = nullptr;
+      delete m_pbht;
+      m_pbht = nullptr;
    }
 
    void info_logo();

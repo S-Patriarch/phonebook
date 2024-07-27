@@ -13,10 +13,10 @@ void pbook::q_phonebook()
    //    second
    //    ...
 {
-   std::string s = _fpb_path+_fpb;
+   std::string s = m_fpb_path+m_fpb;
    std::fstream fs;
    fs.open(s,std::ios::out);
-   for (const auto& p : (*_pbht)) {
+   for (const auto& p : (*m_pbht)) {
       fs << p.first << '\n' << p.second << std::endl;
    }
    fs.close();

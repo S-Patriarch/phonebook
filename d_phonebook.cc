@@ -11,5 +11,5 @@ void pbook::d_phonebook()
    std::cout << "\ncontact > ";
    std::getline(std::cin,s);
 
-   _pbht->erase(s);
+   m_pbht->erase(s);
 }

@@ -7,10 +7,10 @@ bool pbook::check_files()
    // оказывается, то она его создает
 {
    bool res {true};
-   if (_fpb_path!="") {
-      const char* ps = _fpb_path.c_str();
+   if (m_fpb_path!="") {
+      const char* ps = m_fpb_path.c_str();
       mkdir(ps,0700);
-      std::string s = _fpb_path+_fpb;
+      std::string s = m_fpb_path+m_fpb;
       std::fstream fs;
       fs.open(s,std::ios::in|std::ios::out|std::ios::app);
       if (!fs.is_open()) {res = false;}

@@ -24,7 +24,7 @@ void pbook::p_phonebook()
    std::getline(std::cin,s);
 
    // формируем временную хэш-таблицу по запросу
-   for (const auto& [k,v] : (*_pbht)) {
+   for (const auto& [k,v] : (*m_pbht)) {
       string stmp = k;
       std::size_t pos = stmp.find(s);
       if (pos!=string::npos) {

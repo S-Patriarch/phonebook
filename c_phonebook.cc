@@ -15,5 +15,5 @@ void pbook::c_phonebook()
    std::cout << "phone   > ";
    std::getline(std::cin,s2);
 
-   _pbht->emplace(std::make_pair(s1,s2));
+   m_pbht->emplace(std::make_pair(s1,s2));
 }

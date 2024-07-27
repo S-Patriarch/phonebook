@@ -8,7 +8,7 @@ void pbook::read_phonebook()
 {
    using std::string;
 
-   string s = _fpb_path+_fpb;
+   string s = m_fpb_path+m_fpb;
    std::fstream fs;
    fs.open(s,std::ios::in);
 
@@ -24,7 +24,7 @@ void pbook::read_phonebook()
          std::getline(fs,key);
          if (key=="") {break;}
          std::getline(fs,value);
-         _pbht->emplace(key,value);
+         m_pbht->emplace(key,value);
       }
    }
    fs.close();

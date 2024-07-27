@@ -18,7 +18,7 @@ void pbook::s_phonebook()
    std::getline(std::cin,s);
 
    // получаем диапазон итераторов для ключа
-   auto range = _pbht->equal_range(s);
+   auto range = m_pbht->equal_range(s);
    // получаем длину диапазона итераторов
    auto len = std::distance(range.first, range.second);
 
