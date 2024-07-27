@@ -9,9 +9,9 @@
 #include <unordered_map>
 
 class pbook {
-   using Tm = std::unordered_multimap<std::string,std::string>;
+   using mm_t = std::unordered_multimap<std::string,std::string>;
 
-   Tm* _pbht;
+   mm_t* _pbht;
 
    std::string _fpb;       // файл телефонной книжки
    std::string _fpb_path;  // путь к файлу телефонной книжки
@@ -24,7 +24,7 @@ public:
       if (dir_home==nullptr) {_fpb_path = "";}
       else {_fpb_path = static_cast<std::string>(dir_home)+"/.pbook";}
 
-      _pbht = new Tm;
+      _pbht = new mm_t;
    }
    ~pbook() noexcept 
    {

@@ -10,14 +10,14 @@ void pbook::p_phonebook()
    // функция осуществляет поиск контакта по подстроке
    // алгоритмическая сложность O(n)
 {
-   using Tm = std::unordered_multimap<std::string,std::string>;
+   using mm_t = std::unordered_multimap<std::string,std::string>;
 
    using std::string;
    using std::cout;
    using std::endl;
 
    // создаем временную хэш-таблицу в куче
-   Tm* mm = new Tm;
+   mm_t* mm = new mm_t;
 
    string s {};
    cout << "\nsubstring > ";
