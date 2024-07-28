@@ -5,7 +5,7 @@
 #include <string>
 #include <iterator>
 
-void pbook::s_phonebook()
+void PhoneBook::s_phonebook()
    // функция осуществляет поиск контакта
    // алгоритмическая сложность O(1)
 {
@@ -13,24 +13,24 @@ void pbook::s_phonebook()
    using std::cout;
    using std::endl;
 
-   string s {};
+   string contact {};
    cout << "\ncontact > ";
-   std::getline(std::cin,s);
+   std::getline(std::cin,contact);
 
    // получаем диапазон итераторов для ключа
-   auto range = m_pbht->equal_range(s);
+   auto rangeIterator = pbHashTable->equal_range(contact);
    // получаем длину диапазона итераторов
-   auto len = std::distance(range.first, range.second);
+   auto lenghtRange = std::distance(rangeIterator.first, rangeIterator.second);
 
-   if (len!=0) {
+   if (lenghtRange!=0) {
       pl::Color color;
       cout << endl;
       // выводим все совпадения
-      for (auto it=range.first; it!=range.second; ++it) {
+      for (auto i=rangeIterator.first; i!=rangeIterator.second; ++i) {
          cout << color.esc_tb(pl::Color::color::BLUE)
-              << "  " << it->first << '\n'
+              << "  " << i->first << '\n'
               << color.esc_c()
-              << "  " << it->second
+              << "  " << i->second
               << endl;
       }
       cout << endl;

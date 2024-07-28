@@ -1,7 +1,7 @@
 #include "pbook.hh"
 #include <iostream>
 
-void pbook::info()
+void PhoneBook::info()
 {
    info_logo();
    info_help();

@@ -3,14 +3,14 @@
 #include <string>
 #include <iostream>
 
-void pbook::read_phonebook()
+void PhoneBook::read_phonebook()
    // функция чтения контактов из файла данных в хэш-таблицу
 {
    using std::string;
 
-   string s = m_fpb_path+m_fpb;
+   string fullPath = pbFilePath+pbFile;
    std::fstream fs;
-   fs.open(s,std::ios::in);
+   fs.open(fullPath,std::ios::in);
 
    // проверяем файл на наличие данных
    // если файл оказался пустым, то закрываем его, поскольку
@@ -24,7 +24,7 @@ void pbook::read_phonebook()
          std::getline(fs,key);
          if (key=="") {break;}
          std::getline(fs,value);
-         m_pbht->emplace(key,value);
+         pbHashTable->emplace(key,value);
       }
    }
    fs.close();

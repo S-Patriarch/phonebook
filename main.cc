@@ -1,15 +1,12 @@
 //
 // (c) 2024 S-Patriarch
-//
 // Телефонная книжка.
-// Версия проекта 1.0.0
 // Данный проект реализуется под девизом "Слабоумие и Отвага".
-//
-
+//------------------------------------------------------------------------------
 #include "pbook.hh"
 #include "pl/conio.hh"
 #include <iostream>
-////////////////////////////////////////////////////////////////////////////////
+
 int main()
 {
    using std::cout;
@@ -20,43 +17,43 @@ int main()
    using std::make_pair;
 
    pl::Conio conio;
-   pbook pbd;
+   PhoneBook pb;
 
-   if (!pbd.check_files()) {
+   if (!pb.check_files()) {
       cerr << "E: service file check failed" << endl;
       std::exit(EXIT_FAILURE);
    }
-   pbd.read_phonebook();
+   pb.read_phonebook();
 
    cout << pl::mr::clrscr;
-   pbd.info();
+   pb.info();
 
-   string s {};
-   s = conio.get_line(3);
+   string sLine {};
+   sLine = conio.get_line(3);
    for (;;) {
-      if (strncmp("q",s.c_str(),1)==0 || strncmp("Q",s.c_str(),1)==0) {
-         pbd.q_phonebook();
+      if (strncmp("q",sLine.c_str(),1)==0 || strncmp("Q",sLine.c_str(),1)==0) {
+         pb.q_phonebook();
          cout << "\nW: until next time\n" << endl;
          std::exit(EXIT_SUCCESS);
       }
-      if (strncmp("c",s.c_str(),1)==0 || strncmp("C",s.c_str(),1)==0) {
-         pbd.c_phonebook();
+      if (strncmp("c",sLine.c_str(),1)==0 || strncmp("C",sLine.c_str(),1)==0) {
+         pb.c_phonebook();
       }
-      if (strncmp("d",s.c_str(),1)==0 || strncmp("D",s.c_str(),1)==0) {
-         pbd.d_phonebook();
+      if (strncmp("d",sLine.c_str(),1)==0 || strncmp("D",sLine.c_str(),1)==0) {
+         pb.d_phonebook();
       }
-      if (strncmp("s",s.c_str(),1)==0 || strncmp("S",s.c_str(),1)==0) {
-         pbd.s_phonebook();
+      if (strncmp("s",sLine.c_str(),1)==0 || strncmp("S",sLine.c_str(),1)==0) {
+         pb.s_phonebook();
       }
-      if (strncmp("a",s.c_str(),1)==0 || strncmp("A",s.c_str(),1)==0) {
-         pbd.a_phonebook();
+      if (strncmp("a",sLine.c_str(),1)==0 || strncmp("A",sLine.c_str(),1)==0) {
+         pb.a_phonebook();
       }
-      if (strncmp("p",s.c_str(),1)==0 || strncmp("P",s.c_str(),1)==0) {
-         pbd.p_phonebook();
+      if (strncmp("p",sLine.c_str(),1)==0 || strncmp("P",sLine.c_str(),1)==0) {
+         pb.p_phonebook();
       }
 
       cout << pl::mr::clrscr;
-      pbd.info();
-      s = conio.get_line(3);
+      pb.info();
+      sLine = conio.get_line(3);
    }
 }

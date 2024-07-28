@@ -1,7 +1,7 @@
 #include "pbook.hh"
 #include <iostream>
 
-void pbook::info_logo()
+void PhoneBook::info_logo()
    // выводит информационный логотип
 {
    std::cout << "Phone book. Version 1.1.2\n"

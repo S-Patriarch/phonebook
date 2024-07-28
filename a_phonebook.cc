@@ -3,7 +3,7 @@
 #include "pl/color.hh"
 #include <iostream>
 
-void pbook::a_phonebook()
+void PhoneBook::a_phonebook()
    // функция выводит все контакты
 {
    using std::cout;
@@ -12,7 +12,7 @@ void pbook::a_phonebook()
    pl::Color color;
 
    cout << endl;
-   for (const auto& [k,v] : (*m_pbht)) {
+   for (const auto& [k,v] : (*pbHashTable)) {
       cout << color.esc_tb(pl::Color::color::BLUE)
            << "  " << k << '\n'
            << color.esc_c()

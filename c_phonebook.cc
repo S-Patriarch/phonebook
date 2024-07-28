@@ -3,17 +3,17 @@
 #include <string>
 #include <utility>
 
-void pbook::c_phonebook()
+void PhoneBook::c_phonebook()
    // функция создает новый контакт
 {
    using std::string;
 
-   string s1 {};
-   string s2 {};
+   string contact {};
+   string phone {};
    std::cout << "\ncontact > ";
-   std::getline(std::cin,s1);
+   std::getline(std::cin,contact);
    std::cout << "phone   > ";
-   std::getline(std::cin,s2);
+   std::getline(std::cin,phone);
 
-   m_pbht->emplace(std::make_pair(s1,s2));
+   pbHashTable->emplace(std::make_pair(contact,phone));
 }

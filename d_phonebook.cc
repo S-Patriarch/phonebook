@@ -2,14 +2,14 @@
 #include <iostream>
 #include <string>
 
-void pbook::d_phonebook()
+void PhoneBook::d_phonebook()
    // функция удаляет контакт
 {
    using std::string;
 
-   string s {};
+   string contact {};
    std::cout << "\ncontact > ";
-   std::getline(std::cin,s);
+   std::getline(std::cin,contact);
 
-   m_pbht->erase(s);
+   pbHashTable->erase(contact);
 }

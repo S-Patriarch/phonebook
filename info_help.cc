@@ -1,11 +1,11 @@
 #include "pbook.hh"
 #include <iostream>
 
-void pbook::info_help()
+void PhoneBook::info_help()
    // выводит информационную подсказку
 {
    std::cout << "Commands:\n"
-             << "  a - display all contacts : " << m_pbht->size() << '\n'
+             << "  a - display all contacts : " << pbHashTable->size() << '\n'
              << "  s - search contact\n"
              << "  p - search contact by substring\n"
              << "  c - create a new contact\n"

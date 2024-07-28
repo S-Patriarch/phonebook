@@ -8,28 +8,28 @@
 #include <string>
 #include <unordered_map>
 
-class pbook {
+class PhoneBook {
    using mm_t = std::unordered_multimap<std::string,std::string>;
 
-   mm_t* m_pbht;
+   mm_t* pbHashTable;
 
-   std::string m_fpb;       // файл телефонной книжки
-   std::string m_fpb_path;  // путь к файлу телефонной книжки
+   std::string pbFile;      // файл телефонной книжки
+   std::string pbFilePath;  // путь к файлу телефонной книжки
 public:
-   pbook()
-      : m_fpb{"/pbook"}
+   PhoneBook()
+      : pbFile{"/pbook"}
    {
-      const char* sh = "HOME";
-      char* dir_home = std::getenv(sh);
-      if (dir_home==nullptr) {m_fpb_path = "";}
-      else {m_fpb_path = static_cast<std::string>(dir_home)+"/.pbook";}
+      const char* dirHome = "HOME";
+      char* dir_home = std::getenv(dirHome);
+      if (dir_home==nullptr) {pbFilePath = "";}
+      else {pbFilePath = static_cast<std::string>(dir_home)+"/.pbook";}
 
-      m_pbht = new mm_t;
+      pbHashTable = new mm_t;
    }
-   ~pbook() noexcept 
+   ~PhoneBook() noexcept
    {
-      delete m_pbht;
-      m_pbht = nullptr;
+      delete pbHashTable;
+      pbHashTable = nullptr;
    }
 
    void info_logo();

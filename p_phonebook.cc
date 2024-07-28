@@ -6,7 +6,7 @@
 #include <utility>
 #include <unordered_map>
 
-void pbook::p_phonebook()
+void PhoneBook::p_phonebook()
    // функция осуществляет поиск контакта по подстроке
    // алгоритмическая сложность O(n)
 {
@@ -17,25 +17,25 @@ void pbook::p_phonebook()
    using std::endl;
 
    // создаем временную хэш-таблицу в куче
-   mm_t* mm = new mm_t;
+   mm_t* tempHashTable = new mm_t;
 
-   string s {};
+   string subString {};
    cout << "\nsubstring > ";
-   std::getline(std::cin,s);
+   std::getline(std::cin,subString);
 
    // формируем временную хэш-таблицу по запросу
-   for (const auto& [k,v] : (*m_pbht)) {
-      string stmp = k;
-      std::size_t pos = stmp.find(s);
-      if (pos!=string::npos) {
-         mm->emplace(std::make_pair(k,v));
+   for (const auto& [k,v] : (*pbHashTable)) {
+      string tempString = k;
+      std::size_t position = tempString.find(subString);
+      if (position!=string::npos) {
+         tempHashTable->emplace(std::make_pair(k,v));
       }
    }
    // выводим результат поиска по запросу
-   if (!mm->empty()) {
+   if (!tempHashTable->empty()) {
       pl::Color color;
       cout << endl;
-      for (const auto& [k,v] : (*mm)) {
+      for (const auto& [k,v] : (*tempHashTable)) {
          cout << color.esc_tb(pl::Color::color::BLUE)
               << "  " << k << '\n'
               << color.esc_c()
@@ -46,8 +46,8 @@ void pbook::p_phonebook()
    }
    else {cout << "\nW: contact not found" << endl;}
 
-   delete mm;
-   mm = nullptr;
+   delete tempHashTable;
+   tempHashTable = nullptr;
 
    pl::Conio conio;
    cout << pl::mr::crsh;
